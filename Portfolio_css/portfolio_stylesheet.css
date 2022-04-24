@@ -47,14 +47,14 @@ main {
 
 footer {
     background-color: #eaeaea;
-    height: 400px;
+    height: 200px;
     font-family: "monaco", monospace;
 }
 
 .contactdata {
     position: relative; 
     margin-left: 25%;
-    top: 150px;
+    top: 60px;
     line-height: 8px;
     color: #404040; 
 }
@@ -62,7 +62,7 @@ footer {
 .copyright {
     position: relative;
     margin-left: 65%;
-    top: 100px;
+    top: 10px;
     line-height: 8px;
     color: #404040; 
 }
@@ -70,13 +70,13 @@ footer {
 #socialicon1 {
     position: relative;
     margin-left: 48%;
-    top: 50px; 
+    bottom: 40px; 
 }
 
 #socialicon2 {
     position: relative;
     margin-left: 52%;
-    bottom: 0px; 
+    bottom: 87px; 
 }
 
 fieldset {
@@ -86,7 +86,7 @@ fieldset {
     border-radius:8px;	
 }
 
-#fname, #lname, #email #message {
+.input {
     font-family: "monaco", monospace;
     background-color:rgb(135, 135, 135);
     color: rgb(255, 255, 255);
@@ -94,4 +94,16 @@ fieldset {
     border-radius: 12px;
     padding: 5px; 
     margin: 10px; 
+}
+
+#submit {
+    font-family: "monaco", monospace;
+    background-color:rgb(135, 135, 135);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    width: 80px;
+    border-radius: 12px;
+    padding: 5px; 
+    margin: 10px; 
+    height: 30px;
 }
