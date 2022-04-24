@@ -1,13 +1,97 @@
 header {
     background-color: black;
+    height: 400px;
 }
 header {
-    background-image: url(materials/logo\ kleiner.jpg);
-    height: 400px;
+    background-image: url(/Portfolio_css/materials/logo\ kleiner.jpg); 
+    background-size: 200px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 nav {
-    
+    position: relative;
+    text-align: right;
+    top: 35px;
+    right: 25%;
+    word-spacing: 35px;
+    font-family: "monaco", monospace;
+    color: white;
+}
+
+#logoyk {
+    position: relative;
+    left: 25%; 
+}
+
+#link1, #link2, #link3 {
+    text-decoration-line: none;
+}
+
+#link1:visited, #link2:visited, #link3:visited {
+    color: white; 
+}
+#link1:hover, #link2:hover, #link3:hover {
+    color: gray;
+    text-decoration-line: underline;
+}
+
+main {
+    position: relative;
+    margin-left:25%; 
+    margin-right: 25%;
+    width: 800px;
+    font-family: "monaco", monospace;
+    text-align: center;
+}
+
+footer {
+    background-color: #eaeaea;
+    height: 400px;
+    font-family: "monaco", monospace;
+}
+
+.contactdata {
+    position: relative; 
+    margin-left: 25%;
+    top: 150px;
+    line-height: 8px;
+    color: #404040; 
+}
+
+.copyright {
+    position: relative;
+    margin-left: 65%;
+    top: 100px;
+    line-height: 8px;
+    color: #404040; 
+}
+
+#socialicon1 {
+    position: relative;
+    margin-left: 48%;
+    top: 50px; 
+}
+
+#socialicon2 {
+    position: relative;
+    margin-left: 52%;
+    bottom: 0px; 
+}
+
+fieldset {
+    border:2px solid black;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+#fname, #lname, #email #message {
+    font-family: "monaco", monospace;
+    background-color:rgb(135, 135, 135);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 5px; 
+    margin: 10px; 
 }
