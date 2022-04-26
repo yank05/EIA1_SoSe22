@@ -52,31 +52,28 @@ footer {
 }
 
 .contactdata {
-    position: relative; 
-    margin-left: 25%;
-    top: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    float: left;
     line-height: 8px;
     color: #404040; 
 }
 
 .copyright {
-    position: relative;
-    margin-left: 65%;
-    top: 10px;
+    display: flex;
+    float: right; 
+    flex-direction: column; 
+    margin-left: 70%;
     line-height: 8px;
     color: #404040; 
 }
 
-#socialicon1 {
-    position: relative;
-    margin-left: 48%;
-    bottom: 40px; 
-}
-
-#socialicon2 {
-    position: relative;
-    margin-left: 52%;
-    bottom: 89px; 
+#socialicon1, #socialicon2 {
+    display: flex;
+    flex-flow: row;
+    border: none; 
+    margin-left: 50%;
 }
 
 fieldset {
