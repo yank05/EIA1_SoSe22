@@ -25,14 +25,21 @@ header {
     z-index: 1; 
     align-items: center;
     justify-content: center;
-    width: 800px;
+    width: 800px; 
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
-    animation: slideshow 6s;
+    animation: slideshow 10s infinite;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+
+
 @keyframes slideshow {
-    0% {background-image: url(../);}
+    0% { background-image: url(../materials/logo\ kleiner.jpg);}
+    50% {background-image: url(../materials/selfie_umriss_kleiner.jpg);}
+    100% {background-image: url(../materials/logo\ kleiner.jpg);}
 }
 
 nav {
