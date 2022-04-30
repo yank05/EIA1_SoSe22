@@ -1,0 +1,130 @@
+header {
+    background-color: black;
+    height: 400px;
+}
+
+
+#header {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 800px;
+    height: 110px;
+    align-items: center;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#pictures {
+    display: flex;
+    position: relative;
+    z-index: 1; 
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideshow 6s;
+}
+
+@keyframes slideshow {
+    0% {background-image: url(../);}
+}
+
+nav {
+    float: right; 
+    gap: 30px;
+    font-family: "monaco", monospace;
+    color: white;
+}
+
+#link1, #link2, #link3 {
+    text-decoration-line: none;
+}
+
+#link1:visited, #link2:visited, #link3:visited {
+    color: white; 
+}
+#link1:hover, #link2:hover, #link3:hover {
+    color: gray;
+    text-decoration-line: underline;
+}
+
+.current {
+    background-color: rgb(42, 42, 42);
+}
+
+main {
+    position: relative;
+    margin-left:auto; 
+    margin-right: auto;
+    width: 800px;
+    font-family: "monaco", monospace;
+    text-align: center;
+}
+
+footer {
+    background-color: #eaeaea;
+    height: 200px;
+    font-family: "monaco", monospace;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.YouTube, .Instagram, .copyright, .adress {
+    opacity: 0.6;
+}
+
+
+.YouTube:hover {
+    opacity: 1;
+}
+
+.Instagram:hover {
+    opacity: 1;
+}
+
+fieldset {
+    border:2px solid black;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+.input {
+    font-family: "monaco", monospace;
+    background-color:rgb(135, 135, 135);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 5px; 
+    margin: 10px; 
+}
+
+
+
+#submit {
+    font-family: "monaco", monospace;
+    background-color:rgb(135, 135, 135);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    width: 80px;
+    border-radius: 12px;
+    padding: 5px; 
+    margin: 10px; 
+    height: 30px;
+}
