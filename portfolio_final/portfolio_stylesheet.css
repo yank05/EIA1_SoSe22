@@ -1,5 +1,6 @@
 header {
     background-color: black;
+    z-index: 1;
     height: 400px;
 }
 
@@ -7,7 +8,7 @@ header {
 #header {
     display: flex;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     flex-direction: row;
     justify-content: space-between;
     width: 800px;
@@ -22,16 +23,32 @@ header {
 #pictures {
     display: flex;
     position: relative;
-    z-index: 1; 
+    z-index: 2; 
     align-items: center;
     justify-content: center;
     width: 800px; 
     height: 400px;
     margin-left: auto;
     margin-right: auto;
-    animation: slideshow 10s infinite;
+    background-image: url(../Portfolio_css/materials/logo\ kleiner.jpg); 
     background-repeat: no-repeat;
     background-position: center;
+    transition: 5s;
+
+    animation-name: slideshow;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slideshow {
+    0% { background-image: url(../Portfolio_css/materials/logo\ kleiner.jpg);}
+    25% {background-image: url(../Portfolio_css/materials/selfie_umriss_kleiner.jpg);}
+    75% {background-image: url(../../Portfolio_css/materials/yicon.png)}
+    100% {background-image: url(../Portfolio_css/materials/logo\ kleiner.jpg);}
 }
 
 #störer {
@@ -54,11 +71,7 @@ header {
 }
 
 
-@keyframes slideshow {
-    0% { background-image: url(../materials/logo\ kleiner.jpg);}
-    50% {background-image: url(../materials/selfie_umriss_kleiner.jpg);}
-    100% {background-image: url(../materials/logo\ kleiner.jpg);}
-}
+
 
 nav {
     float: right; 
@@ -81,10 +94,16 @@ nav {
 
 .logos {
     padding: 50px;
+    transition: 1.5s;
 }
 
 video {
-    padding: 50px; 
+    padding: 50px;
+    transition: 1.5s; 
+}
+
+iframe {
+    transition: 1.5s;
 }
 
 .logos:hover, video:hover, iframe:hover {
