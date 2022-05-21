@@ -1,9 +1,10 @@
+var tonerow:HTMLAudioElement [] = ["assets/keyboard/c.mp3" + "assets/keyboard/d.mp3" + "assets/keyboard/e.mp3" + "assets/keyboard/f.mp3" + "assets/keyboard/g.mp3" + "assets/keyboard/f.mp3" + "assets/keyboard/e.mp3" + "assets/keyboard/d.mp3" + "assets/keyboard/c.mp3"];
+var selector = 0; 
+
 function playSample(file:string) {
     var sound:HTMLAudioElement = new Audio("assets/keyboard/" + file);
     sound.play();
 }
-
-
 
 
 window.addEventListener('load', function () {
@@ -42,4 +43,15 @@ document.querySelector("#black4").addEventListener('click', function() {
 }); 
 document.querySelector("#black5").addEventListener('click', function() {
     playSample("bf.mp3")
-}); 
+});
+document.querySelector('#playbutton').addEventListener('click', Interval); 
+}; 
+
+
+function Interval() {
+ setInterval(function() {
+   var sound:HTMLAudioElement = new Audio("assets/Keyboard/" + tonerow[selector]); 
+   sound.play();
+ }, 500);
+ selector++; 
+}; 
