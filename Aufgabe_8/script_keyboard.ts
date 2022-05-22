@@ -3,7 +3,7 @@ var selector = 0;
 
 //Sample Funktion
 function playSample(file:string) {
-    var sound:HTMLAudioElement = new Audio("assets/keyboard/" + file);
+    var sound:HTMLAudioElement = new Audio("../assets/keyboard/" + file);
     sound.play();
 }
 
@@ -50,7 +50,7 @@ document.querySelector("#black5").addEventListener('click', function() {
 //Melodie
 function melody() { 
  setInterval(function() {
-   var sound:HTMLAudioElement = new Audio("assets/keyboard/" + tonerow[selector]); 
+   var sound:HTMLAudioElement = new Audio("../assets/keyboard/" + tonerow[selector]); 
    sound.play();
    selector++; 
  }, 1000); 
