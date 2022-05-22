@@ -2,7 +2,7 @@ var tonerow = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "f.mp3", "e.mp3", "d
 var selector = 0;
 //Sample Funktion
 function playSample(file) {
-    var sound = new Audio("assets/keyboard/" + file);
+    var sound = new Audio("../assets/keyboard/" + file);
     sound.play();
 }
 //Tastenfunktionen
@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
 //Melodie
 function melody() {
     setInterval(function () {
-        var sound = new Audio("assets/keyboard/" + tonerow[selector]);
+        var sound = new Audio("../assets/keyboard/" + tonerow[selector]);
         sound.play();
         selector++;
     }, 1000);
