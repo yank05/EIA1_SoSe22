@@ -1,9 +1,9 @@
-var tonerow:string [] = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "f.mp3", "e.mp3", "d.mp3", "c.mp3"];
-var selector = 0; 
+var tonerow: string [] = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "f.mp3", "e.mp3", "d.mp3", "c.mp3"];
+var selector: number = 0; 
 
 //Sample Funktion
 function playSample(file:string) {
-    var sound:HTMLAudioElement = new Audio("../Aufgabe_8/sounds/Keyboard/" + file);
+    var sound:HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + file);
     sound.play();
 }
 
@@ -46,16 +46,25 @@ document.querySelector("#black5").addEventListener('click', function() {
     playSample("bf.mp3")
 });
 }); 
-
-//Melodie
-function melody() { 
- setInterval(function() {
-   var sound:HTMLAudioElement = new Audio("../Aufgabe_8/sounds/Keyboard/" + tonerow[selector]); 
-   sound.play();
-   selector++; 
- }, 1000); 
-}; 
-
+var clickcount: number = 0; 
+var true_false: number = 0; 
 window.addEventListener('load', function () {
-document.querySelector("#playbutton").addEventListener('click', melody); 
-}); 
+    document.querySelector("#playbutton").addEventListener('click', click); 
+    }); 
+
+function click() {
+    clickcount++; 
+    if (clickcount == 1) {
+        var tones = setInterval(function() {
+            var sound:HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]); 
+            sound.play();
+            selector++; 
+          }, 600); 
+        console.log(clickcount); 
+    } else {
+       clickcount = 0; 
+       console.log(clickcount); 
+       clearInterval(tones); 
+    }}; 
+
+   

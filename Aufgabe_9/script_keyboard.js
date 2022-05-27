@@ -2,7 +2,7 @@ var tonerow = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "f.mp3", "e.mp3", "d
 var selector = 0;
 //Sample Funktion
 function playSample(file) {
-    var sound = new Audio("../Aufgabe_8/sounds/Keyboard/" + file);
+    var sound = new Audio("../Aufgabe_9/sounds/Keyboard/" + file);
     sound.play();
 }
 //Tastenfunktionen
@@ -44,16 +44,26 @@ window.addEventListener('load', function () {
         playSample("bf.mp3");
     });
 });
-//Melodie
-function melody() {
-    setInterval(function () {
-        var sound = new Audio("../Aufgabe_8/sounds/Keyboard/" + tonerow[selector]);
-        sound.play();
-        selector++;
-    }, 1000);
+var clickcount = 0;
+var true_false = 0;
+window.addEventListener('load', function () {
+    document.querySelector("#playbutton").addEventListener('click', click);
+});
+function click() {
+    clickcount++;
+    if (clickcount == 1) {
+        var tones = setInterval(function () {
+            var sound = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]);
+            sound.play();
+            selector++;
+        }, 600);
+        console.log(clickcount);
+    }
+    else {
+        clickcount = 0;
+        console.log(clickcount);
+        clearInterval(tones);
+    }
 }
 ;
-window.addEventListener('load', function () {
-    document.querySelector("#playbutton").addEventListener('click', melody);
-});
 //# sourceMappingURL=script_keyboard.js.map
