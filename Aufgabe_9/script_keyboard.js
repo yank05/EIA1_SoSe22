@@ -52,18 +52,20 @@ window.addEventListener('load', function () {
 function click() {
     clickcount++;
     if (clickcount == 1) {
-        var tones = setInterval(function () {
+        setInterval(function () {
             var sound = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]);
             sound.play();
             selector++;
-        }, 600);
+        }, 1600);
         console.log(clickcount);
     }
     else {
         clickcount = 0;
         console.log(clickcount);
-        clearInterval(tones);
+        clearInterval();
+        selector = 0;
+        console.log(selector);
     }
+    ;
 }
-;
 //# sourceMappingURL=script_keyboard.js.map

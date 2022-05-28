@@ -55,16 +55,18 @@ window.addEventListener('load', function () {
 function click() {
     clickcount++; 
     if (clickcount == 1) {
-        var tones = setInterval(function() {
+        setInterval(function() {
             var sound:HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]); 
             sound.play();
             selector++; 
-          }, 600); 
+          }, 1600); 
         console.log(clickcount); 
     } else {
-       clickcount = 0; 
-       console.log(clickcount); 
-       clearInterval(tones); 
-    }}; 
+        clickcount = 0; 
+        console.log(clickcount); 
+        clearInterval(); 
+        selector = 0; 
+        console.log(selector); 
+    }; 
 
    
