@@ -56,8 +56,7 @@ window.addEventListener("load", function () {
 //Start, Stop + Loop der Melodie
 function click(): void {
     clickcount++;
-    selector = 0; 
-    console.log(clickcount); 
+    selector = 0;  
     document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
         var tones = setInterval(function() {
