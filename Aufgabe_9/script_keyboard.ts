@@ -1,4 +1,5 @@
 var tonerow: string [] = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "f.mp3", "e.mp3", "d.mp3", "c.mp3"];
+var tonepool: string [] = ["c.mp3", "d.mp3", "e.mp3", "f.mp3", "g.mp3", "a.mp3", "b.mp3", "af.mp3", "bf.mp3", "df.mp3", "ef.mp3", "gf.mp3"];
 var selector: number = 0; 
 
 //Sample Funktion
@@ -47,11 +48,12 @@ document.querySelector("#black5").addEventListener('click', function() {
 });
 }); 
 var clickcount: number = 0; 
-var true_false: number = 0; 
 window.addEventListener("load", function () {
-    document.querySelector(".fa-play").addEventListener("click", click); 
+    document.querySelector(".fa-play").addEventListener("click", click);
+    document.querySelector("#remix").addEventListener("click", remix); 
     }); 
 
+//Start, Stop + Loop der Melodie
 function click(): void {
     clickcount++;
     selector = 0; 
@@ -59,16 +61,28 @@ function click(): void {
     document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
         var tones = setInterval(function() {
-            var sound:HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]); 
+            var sound: HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]); 
             sound.play();
             selector++; 
-          }, 1600); 
-    }
+            if (selector == 9) {
+                selector = 0;
+            }
+          }, 1000); 
+        }
     if (clickcount == 2) {
         document.getElementById("xxx").setAttribute("class", "fas fa-play");  
         clickcount = 0; 
         selector = 10; 
-        clearInterval(tones);   
     }} 
-
   
+//Remix
+var selectorRemix
+
+function remix(): void {
+    var remixplay = setInterval(function() {
+        selectorRemix = Math.round(Math.random()); 
+        var sound: HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonepool[selectorRemix]); 
+        sound.play();
+        selector++; 
+      }, 1600); 
+    }
