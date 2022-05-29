@@ -48,22 +48,25 @@ document.querySelector("#black5").addEventListener('click', function() {
 }); 
 var clickcount: number = 0; 
 var true_false: number = 0; 
-window.addEventListener('load', function () {
-    document.querySelector("#playbutton").addEventListener('click', click); 
+window.addEventListener("load", function () {
+    document.querySelector(".fa-play").addEventListener("click", click); 
     }); 
 
-function click() {
+function click(): void {
     clickcount++;
+    console.log(clickcount); 
+    document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
         var tones = setInterval(function() {
             var sound:HTMLAudioElement = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]); 
             sound.play();
             selector++; 
           }, 1600); 
-        } else if (selector >= 9) {
-            selector = 0; 
-    } else {
-        clearInterval(tones);  
-    }}; 
+    }
+    if (clickcount == 2) {
+        document.getElementById("xxx").setAttribute("class", "fas fa-play");  
+        clickcount = 0; 
+        clearInterval(tones);   
+    }} 
 
-   
+  

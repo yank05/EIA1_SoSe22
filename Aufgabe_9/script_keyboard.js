@@ -46,11 +46,13 @@ window.addEventListener('load', function () {
 });
 var clickcount = 0;
 var true_false = 0;
-window.addEventListener('load', function () {
-    document.querySelector("#playbutton").addEventListener('click', click);
+window.addEventListener("load", function () {
+    document.querySelector(".fa-play").addEventListener("click", click);
 });
 function click() {
     clickcount++;
+    console.log(clickcount);
+    document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
         var tones = setInterval(function () {
             var sound = new Audio("../Aufgabe_9/sounds/Keyboard/" + tonerow[selector]);
@@ -58,12 +60,10 @@ function click() {
             selector++;
         }, 1600);
     }
-    else if (selector >= 9) {
-        selector = 0;
-    }
-    else {
+    if (clickcount == 2) {
+        document.getElementById("xxx").setAttribute("class", "fas fa-play");
+        clickcount = 0;
         clearInterval(tones);
     }
 }
-;
 //# sourceMappingURL=script_keyboard.js.map

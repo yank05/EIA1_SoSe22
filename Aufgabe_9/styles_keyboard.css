@@ -182,11 +182,12 @@ body {
     align-items: center;
 }
 
-#button {
-    display: flex; 
+#buttons {
+    display: flex;
+    position: relative;
+    width: min-content;
+    height: min-content;
     margin-left: auto;
-    margin-right: auto; 
-    align-items: center;
-    width: 200px;
-    height: 200px;
-}
+    margin-right: auto;
+    margin-top: 20px;
+} 
