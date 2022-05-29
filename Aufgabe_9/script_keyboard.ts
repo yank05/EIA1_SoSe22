@@ -54,6 +54,7 @@ window.addEventListener("load", function () {
 
 function click(): void {
     clickcount++;
+    selector = 0; 
     console.log(clickcount); 
     document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
@@ -66,6 +67,7 @@ function click(): void {
     if (clickcount == 2) {
         document.getElementById("xxx").setAttribute("class", "fas fa-play");  
         clickcount = 0; 
+        selector = 10; 
         clearInterval(tones);   
     }} 
 
