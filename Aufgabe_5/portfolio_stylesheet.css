@@ -167,7 +167,7 @@ fieldset {
     border-radius:8px;	
 }
 
-.input {
+.addTask {
     font-family: "monaco", monospace;
     background-color:rgb(135, 135, 135);
     color: rgb(255, 255, 255);
@@ -179,7 +179,7 @@ fieldset {
 
 
 
-#submit {
+.submit {
     font-family: "monaco", monospace;
     background-color:rgb(135, 135, 135);
     color: rgb(255, 255, 255);

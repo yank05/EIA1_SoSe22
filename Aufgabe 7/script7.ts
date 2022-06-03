@@ -77,7 +77,6 @@ function clickEU() {
     document.querySelector(".chartWrapper .chart").setAttribute('style', 'height:100%'); 
 
 }
-}
 
 window.addEventListener('load', function() {
 
@@ -86,4 +85,4 @@ window.addEventListener('load', function() {
     document.querySelector(".italy").addEventListener('click', clickItaly); 
     document.querySelector(".belgium").addEventListener('click', clickBelgium); 
     document.querySelector(".stars").addEventListener('click', clickEU); 
-} 
+}) 

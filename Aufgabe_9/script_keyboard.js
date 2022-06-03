@@ -54,7 +54,6 @@ window.addEventListener("load", function () {
 function click() {
     clickcount++;
     selector = 0;
-    console.log(clickcount);
     document.getElementById("xxx").setAttribute("class", "fas fa-stop");
     if (clickcount == 1) {
         var tones = setInterval(function () {
