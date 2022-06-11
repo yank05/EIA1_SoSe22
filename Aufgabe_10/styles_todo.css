@@ -41,12 +41,15 @@ h3 {
     border-width: 2px;
     border-color: darkgrey;
     border-radius: 5px;
-    padding: 5px;
+    padding-left: 50px; 
+    padding-right: 5px;
 }
 
 .invisible {
     width: 30px;
-    height: 30px;
+    position: absolute;
+    height: 30px; 
+    left: 5px; 
     opacity: 0;
 }
 .dot {
@@ -55,9 +58,13 @@ h3 {
     border-style: solid;
     border-color: darkgray;
     left: 5px; 
+    margin: 4px;
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
+}
+.text {
+    background-color: black; 
 }
 
 #addTask {
