@@ -1,7 +1,7 @@
 //Setzen der IDs für neues Element beim Enter drücken
 //Eingabefeld auslesen 
 //Gesamtanzahl ändern
-var pointID : number = 2; 
+var pointID : number = 0; 
 var pointText : string = "point"; 
 var trashNumber : string = "trash"; 
 var FieldText : string = "please write something"; 
@@ -37,10 +37,13 @@ AddTask.addEventListener("keypress", function(event) {
             document.getElementById(pointText + pointID).appendChild(newInput);
             document.getElementById(pointText + pointID).appendChild(newSpan); 
             document.getElementById(pointText + pointID).appendChild(newI);
+            newI.addEventListener("click", deletion); 
                 }
             }); 
-//löschen - Ansatz, funktioniert leider nicht 
-i.addEventListener("click", function(e) {
-    let IDtrash = this.id; 
-    console.log(IDtrash); 
-}); 
+//löschen - Ansatz, funktioniert leider nicht richtig
+function deletion() {
+    let id = this.id;
+    let remover1 = document.getElementById(id);
+    let remover2 = 
+    remover.remove(); 
+}; 
