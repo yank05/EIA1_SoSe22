@@ -5,14 +5,12 @@ var pointID : number = 2;
 var pointText : string = "point"; 
 var trashNumber : string = "trash"; 
 var FieldText : string = "please write something"; 
-var newI = document.createElement("i"); 
 
 var AddTask : HTMLElement = document.getElementById("addTask");
 AddTask.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             pointID++; 
             FieldText = document.getElementById("addTask").value; 
-            console.log(FieldText);
             document.getElementById("total").innerHTML = pointID + " in total";  
         } 
         if (FieldText == "") {
@@ -25,6 +23,7 @@ AddTask.addEventListener("keypress", function(event) {
             let newDiv = document.createElement("div");
             let newInput = document.createElement("input");
             let newSpan  = document.createElement("span");
+            let newI = document.createElement("i"); 
             newDiv.setAttribute("id", pointText + pointID); 
             newDiv.setAttribute("class", "point"); 
             newDiv.innerHTML = FieldText; 
@@ -37,14 +36,11 @@ AddTask.addEventListener("keypress", function(event) {
             document.getElementById("list").appendChild(newDiv);
             document.getElementById(pointText + pointID).appendChild(newInput);
             document.getElementById(pointText + pointID).appendChild(newSpan); 
-            document.getElementById(pointText + pointID).appendChild(newI); 
-            console.log(trashNumber + pointID); 
+            document.getElementById(pointText + pointID).appendChild(newI);
                 }
-            })
-//löschen
-var deleter = document.getElementsByClassName("fa solid fa-trash-can"); 
-newI.addEventListener("click", deletion); 
-
-function deletion () {
-    console.log("Test"); 
-}
+            }); 
+//löschen - Ansatz, funktioniert leider nicht 
+i.addEventListener("click", function(e) {
+    let IDtrash = this.id; 
+    console.log(IDtrash); 
+}); 
