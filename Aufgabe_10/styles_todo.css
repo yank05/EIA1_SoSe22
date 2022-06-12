@@ -81,3 +81,16 @@ h3 {
     border-radius: 12px;
     margin-bottom: 0px;
 }
+
+.fa-trash-can {
+    color: black;
+    position: relative;
+    font-size: 30px;
+    margin-left: 10px; 
+    bottom: 2px;
+    opacity: 0;
+}
+
+.fa-trash-can:hover {
+    opacity: 1;
+}
