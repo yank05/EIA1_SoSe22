@@ -5,6 +5,7 @@ var pointID = 0;
 var pointText = "point";
 var trashNumber = "trash";
 var FieldText = "please write something";
+var ticker = 0;
 var AddTask = document.getElementById("addTask");
 AddTask.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
@@ -37,13 +38,25 @@ AddTask.addEventListener("keypress", function (event) {
         document.getElementById(pointText + pointID).appendChild(newSpan);
         document.getElementById(pointText + pointID).appendChild(newI);
         newI.addEventListener("click", deletion);
+        newSpan.addEventListener("click", done);
     }
 });
 //löschen - Ansatz, funktioniert leider nicht richtig
 function deletion() {
     let id = this.id;
     let remover1 = document.getElementById(id);
-    let remover2 = remover.remove();
+    remover1.parentNode.removeChild(remover1);
 }
 ;
+//erledigt markieren - funktioniert auch nicht richtig
+function done() {
+    ticker++;
+    let id = this.id;
+    let dot = document.getElementById(id);
+    console.log(id);
+    dot.setAttribute("style", "background-color:green");
+    let tick = document.createElement("i");
+    tick.setAttribute("class", "fa-solid fa-check");
+    tick.setAttribute("id", "tick" + ticker);
+}
 //# sourceMappingURL=script_todo.js.map
