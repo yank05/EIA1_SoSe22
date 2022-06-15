@@ -4,13 +4,13 @@
 var pointID = 0;
 var pointText = "point";
 var trashNumber = "trash";
-var FieldText = "please write something";
 var ticker = 0;
 var AddTask = document.getElementById("addTask");
 AddTask.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         pointID++;
         FieldText = document.getElementById("addTask").value;
+        document.getElementById("addTask").value = "";
         document.getElementById("total").innerHTML = pointID + " in total";
     }
     if (FieldText == "") {
@@ -20,27 +20,37 @@ AddTask.addEventListener("keypress", function (event) {
 //neues Feld erstellen
 AddTask.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-        let newDiv = document.createElement("div");
-        let newInput = document.createElement("input");
-        let newSpan = document.createElement("span");
-        let newI = document.createElement("i");
-        newDiv.setAttribute("id", pointText + pointID);
-        newDiv.setAttribute("class", "point");
-        newDiv.innerHTML = FieldText;
-        newInput.setAttribute("type", "radio");
-        newInput.setAttribute("class", "invisible");
-        newSpan.setAttribute("class", "dot");
-        newSpan.setAttribute("id", pointText + pointID);
-        newI.setAttribute("id", trashNumber + pointID);
-        newI.setAttribute("class", "fa-solid fa-trash-can");
-        document.getElementById("list").appendChild(newDiv);
-        document.getElementById(pointText + pointID).appendChild(newInput);
-        document.getElementById(pointText + pointID).appendChild(newSpan);
-        document.getElementById(pointText + pointID).appendChild(newI);
-        newI.addEventListener("click", deletion);
-        newSpan.addEventListener("click", done);
+        createTask();
     }
+    let newDiv = document.createElement("div");
+    let newInput = document.createElement("input");
+    let newSpan = document.createElement("span");
+    let newI = document.createElement("i");
+    newDiv.setAttribute("id", pointText + pointID);
+    newDiv.setAttribute("class", "point");
+    newDiv.innerHTML = FieldText;
+    newInput.setAttribute("type", "radio");
+    newInput.setAttribute("class", "invisible");
+    newSpan.setAttribute("class", "dot");
+    newSpan.setAttribute("id", pointText + pointID);
+    newI.setAttribute("id", trashNumber + pointID);
+    newI.setAttribute("class", "fa-solid fa-trash-can");
+    document.getElementById("list").appendChild(newDiv);
+    document.getElementById(pointText + pointID).appendChild(newInput);
+    document.getElementById(pointText + pointID).appendChild(newSpan);
+    document.getElementById(pointText + pointID).appendChild(newI);
+    newI.addEventListener("click", deletion);
+    newSpan.addEventListener("click", done);
 });
+function createTask() {
+    let FieldText = document.getElementById("addTask").value;
+    const Task = {
+        taskNumber: pointID,
+        Text: FieldText,
+        done: false,
+    };
+    console.log("Test");
+}
 //löschen - Ansatz, funktioniert leider nicht richtig
 function deletion() {
     let id = this.id;
